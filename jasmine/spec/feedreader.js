@@ -33,8 +33,8 @@ $(function() {
          */
         it('url exists and not empty', function() {
             for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i].hasOwnProperty('name')).toBe(true);
-                expect(allFeeds[i].name.length).not.toBe(0);
+                expect(allFeeds[i].hasOwnProperty('url')).toBe(true);
+                expect(allFeeds[i].url.length).not.toBe(0);
             }
         });
 
@@ -42,6 +42,12 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('name exists and not empty', function() {
+            for (var i = 0; i < allFeeds.length; i++) {
+                expect(allFeeds[i].hasOwnProperty('name')).toBe(true);
+                expect(allFeeds[i].name.length).not.toBe(0);
+            }
+        });
     });
 
 

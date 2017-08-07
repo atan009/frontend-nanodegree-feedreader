@@ -98,7 +98,7 @@ $(function() {
 
 
         it ('Init loadFeed', function(done) {            
-            expect($(".entry").length > 0).toBe(true);
+            expect($(".feed .entry").length > 0).toBe(true);
             done();
         });
     });

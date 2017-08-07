@@ -38,6 +38,7 @@ $(function() {
             }
         });
 
+
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
@@ -62,6 +63,7 @@ $(function() {
             expect($("body").hasClass('menu-hidden')).toBe(true);
         });
 
+
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
@@ -77,6 +79,7 @@ $(function() {
         });
     });
 
+
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         /* TODO: Write a test that ensures when the loadFeed
@@ -85,7 +88,6 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-
         beforeEach(function(done) {
             setTimeout(function () {
                 loadFeed(0, function() {
@@ -94,11 +96,13 @@ $(function() {
             }, 3);
         });
 
+
         it ('Init loadFeed', function(done) {            
             expect($(".entry").length > 0).toBe(true);
             done();
         });
     });
+
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
@@ -106,9 +110,32 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        //loadFeed(10);
-        // it('new feed', function() {
+        var DOM;
+        var loadDOM;
 
-        // });
+
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                DOM = $(".feed").html();
+                loadFeed(1, function() {
+                    done();
+                });
+            });
+        });
+
+
+        //set it back to default
+        afterEach(function() {
+            loadFeed(0);
+        });
+
+
+        it('new feed', function(done) {
+            loadDOM = $(".feed").html();
+            expect(DOM === loadDOM).toBe(false);
+            done();
+        });
     });
+
+
 }());

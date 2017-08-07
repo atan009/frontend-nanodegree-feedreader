@@ -59,7 +59,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('menu hidden', function() {
-            expect($("#body").hasClass('menu-hidden')).toBe(false);
+            expect($("body").hasClass('menu-hidden')).toBe(true);
         });
 
          /* TODO: Write a test that ensures the menu changes
@@ -67,6 +67,14 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+        it('menu toggle', function() { 
+            $('.menu-icon-link').click();
+            expect($("body").hasClass('menu-hidden')).toBe(false);
+
+
+            $('.menu-icon-link').click();
+            expect($("body").hasClass('menu-hidden')).toBe(true);
+        });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */

@@ -46,3 +46,11 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+## How to Run
+Clone the repo or download the zip.<br>
+In the repo/zip is an index.html file.<br>
+Opening the index.html will run the webpage.<br>
+The test should automatically run themselves and tell you if any failed.<br>
+If you want to run an individual test, click the test that you wish to run.<br>
+To run all the tests(if it does not do so automatically), click run all near the bottom left.
